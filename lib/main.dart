@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
+  var questions = ['好きなラーメンは？', '好きなパスタは？', '好きな寿司は？'];
+  var questionIndex = 0;
+
+  answerQuestion() {
+    questionIndex++;
+    print(questionIndex);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +31,9 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(children: const [
           Text('the question'),
-          ElevatedButton(onPressed: null, child: Text('イタリアン')),
-          ElevatedButton(onPressed: null, child: Text('中華')),
-          ElevatedButton(onPressed: null, child: Text('割烹')),
+          ElevatedButton(onPressed: null, child: answerQuestion),
+          ElevatedButton(onPressed: null, child: answerQuestion),
+          ElevatedButton(onPressed: null, child: answerQuestion),
         ]),
       ),
     );
