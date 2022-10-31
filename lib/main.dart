@@ -14,7 +14,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('初めてのflutter'),
         ),
-        body: const Text('テキスト'),
+        body: Column(children: const [
+          Text('the question'),
+          ElevatedButton(onPressed: null, child: Text('イタリアン')),
+          ElevatedButton(onPressed: null, child: Text('中華')),
+          ElevatedButton(onPressed: null, child: Text('割烹')),
+        ]),
       ),
     );
   }
