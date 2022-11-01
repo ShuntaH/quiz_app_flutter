@@ -29,13 +29,13 @@ class MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('初めてのflutter'),
         ),
-        body: Column(children: const [
+        body: Column(children: [
           Text(
             questions[questionIndex],
           ),
-          ElevatedButton(onPressed: answerQuestion, child: Text('answer1')),
-          ElevatedButton(onPressed: answerQuestion, child: Text('answer1')),
-          ElevatedButton(onPressed: answerQuestion, child: Text('answer1')),
+          ElevatedButton(onPressed: answerQuestion, child: const Text('answer1')),
+          ElevatedButton(onPressed: answerQuestion, child: const Text('answer1')),
+          ElevatedButton(onPressed: answerQuestion, child: const Text('answer1')),
         ]),
       ),
     );
