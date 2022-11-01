@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -17,7 +17,7 @@ class MyAppState extends State<MyApp> {
   var questions = ['好きなラーメンは？', '好きなパスタは？', '好きな寿司は？'];
   var questionIndex = 0;
 
-  answerQuestion() {
+  void answerQuestion() {
     questionIndex++;
     print(questionIndex);
   }
@@ -31,9 +31,9 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(children: const [
           Text('the question'),
-          ElevatedButton(onPressed: null, child: answerQuestion),
-          ElevatedButton(onPressed: null, child: answerQuestion),
-          ElevatedButton(onPressed: null, child: answerQuestion),
+          ElevatedButton(onPressed: null, child: Text('answer1')),
+          ElevatedButton(onPressed: null, child: Text('answer1')),
+          ElevatedButton(onPressed: null, child: Text('answer1')),
         ]),
       ),
     );
