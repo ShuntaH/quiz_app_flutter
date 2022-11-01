@@ -21,7 +21,6 @@ class MyAppState extends State<MyApp> {
   void _answerQuestion() {
     setState(() {
       _questionIndex++;
-      print(_questionIndex);
     });
   }
 
@@ -34,13 +33,26 @@ class MyAppState extends State<MyApp> {
           title: const Text('初めてのflutter'),
         ),
         body: Column(children: [
-          Question(questionText: questions[_questionIndex],),
+          Question(
+            questionText: questions[_questionIndex],
+          ),
           ElevatedButton(
-              onPressed: _answerQuestion, child: const Text('answer1')),
+            onPressed: _answerQuestion,
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.red),
+            ),
+            child: const Text('answer1'),
+          ),
           ElevatedButton(
-              onPressed: _answerQuestion, child: const Text('answer1')),
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.green)),
+              onPressed: _answerQuestion,
+              child: const Text('answer1')),
           ElevatedButton(
-              onPressed: _answerQuestion, child: const Text('answer1')),
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blue)),
+              onPressed: _answerQuestion,
+              child: const Text('answer1')),
         ]),
       ),
     );
