@@ -17,8 +17,10 @@ class MyAppState extends State<MyApp> {
   var questionIndex = 0;
 
   void answerQuestion() {
-    questionIndex++;
-    print(questionIndex);
+    setState(() {
+      questionIndex++;
+      print(questionIndex);
+    });
   }
 
   @override
@@ -33,9 +35,12 @@ class MyAppState extends State<MyApp> {
           Text(
             questions[questionIndex],
           ),
-          ElevatedButton(onPressed: answerQuestion, child: const Text('answer1')),
-          ElevatedButton(onPressed: answerQuestion, child: const Text('answer1')),
-          ElevatedButton(onPressed: answerQuestion, child: const Text('answer1')),
+          ElevatedButton(
+              onPressed: answerQuestion, child: const Text('answer1')),
+          ElevatedButton(
+              onPressed: answerQuestion, child: const Text('answer1')),
+          ElevatedButton(
+              onPressed: answerQuestion, child: const Text('answer1')),
         ]),
       ),
     );
